@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MenuBar } from './layouts';
+import { Route } from 'react-router-dom';
+import { ACSC00, ACSC01, ACSC02, ACSC03, ACSC04 } from './screens';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    render() {
+        return (
+            <div className="app">
+                <header>
+                    <MenuBar />
+                </header>
+                <main>
+                    <Route exact path="/" component={ACSC00}></Route>
+                    <Route exact path="/about" component={ACSC01}></Route>
+                    <Route exact path="/info" component={ACSC02}></Route>
+                    <Route exact path="/notice" component={ACSC03}></Route>
+                    <Route exact path="/contact" component={ACSC04}></Route>
+                </main>
+            </div>
+        );
+    }
 }
 
 export default App;
